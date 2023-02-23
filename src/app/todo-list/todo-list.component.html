@@ -1,0 +1,17 @@
+<div class="container .bg-dark">
+    <h1>Todo List</h1>
+    <mat-form-field>
+      <input matInput placeholder="Add task" 
+      [(ngModel)]="newTask" (keyup.enter)="addTask()" />
+    </mat-form-field>
+    <mat-list>
+      <mat-list-item *ngFor="let task of tasks">
+        <mat-checkbox [(ngModel)]="task.completed"></mat-checkbox>
+        <div class="textColor">{{ task.name }}</div>
+        <button mat-icon-button type="button" class="btn btn-danger" (click)="removeTask(task)">
+          <mat-icon class="textColor">close</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  
